@@ -4,7 +4,7 @@ from os import path
 import socket
 import sys
 import glob
-from ConfigParser import RawConfigParser
+from configparser import RawConfigParser
 
 config = RawConfigParser(allow_no_value=True)
 config.read(path.join(path.dirname(sys.argv[0]), 'config.ini'))
@@ -27,16 +27,19 @@ class I2DXComponentsHandler(tornado.web.RequestHandler):
 
 class I2DXWebSocket(websocket.WebSocketHandler):
 
-	def allow_draft76(true):
+	def allow_draft76(self):
 		return True
 
-	def open(self):
+	def open(self, *args, **kwargs):
 		self.write_message("Ready")
-		self.stream.socket.setsockopt(socket.SOL_TCP, socket.TCP_NODELAY, 0)
-		print "i2dx connection opened!"
+		self.ws_connection.stream.socket.setsockopt(socket.SOL_TCP, socket.TCP_NODELAY, 0) # type: ignore
+		print("i2dx connection opened!")
+
+	def toggle_key(self, key_id, state, player):
+		pass
 
 	def on_message(self, message):
-		parts = message.split(';')
+		parts = message.split(';') # type: ignore
 		if parts[0] == '1':
 			self.toggle_key(parts[1], True, parts[2])
 		elif parts[0] == '0':
@@ -44,10 +47,10 @@ class I2DXWebSocket(websocket.WebSocketHandler):
 		elif parts[0] == 'junk':
 			pass
 		else:
-			print "unknown message", parts[0]
+			print("unknown message", parts[0])
 
 	def on_close(self):
-		print "connection closed"
+		print("connection closed")
 
 
 class NoCacheStaticFileHandler(tornado.web.StaticFileHandler):
@@ -67,9 +70,8 @@ def serve(handler):
 
 	port = config.getint('listen', 'port')
 	address = config.get('listen', 'address')
-	print "listening on port", port, "address", address
+	print("listening on port", port, "address", address)
 
 	application.listen(port)
 
 	tornado.ioloop.IOLoop.instance().start()
-
