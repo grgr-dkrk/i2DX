@@ -3,47 +3,40 @@
 
 	function iidxlayout(axis) {
 
-		var map = {
-			left:  axis == 'left' ? 'left'  : 'right',
-			right: axis == 'left' ? 'right' : 'left'
-		};
-
-		function x(index) {
-			return 310 + 85 * index;
-		}
-
-		function y(index) {
-			return 108 + 245 * (index % 2);
-		}
+		var startPosition = axis == 'left' ? 1 : 8;
 
 		function style(index) {
 			var style = {
-				bottom: (108 + 245 * (index % 2)) + 'px',
-				width: '120px',
-				height: '200px'
+				bottom: (108 + (46 + 10) * (index % 2)) + 'mm',
+				width: '29mm',
+				height: '46mm',
+				left: 20 + ((12 + 8) * index) + 'mm'
 			};
-			style[map.left] = (310 + 85 * index) + 'px';
+
 			return style;
 		}
 
 		return function(ui) {
-			ui.button('iidx_1', style(0));
-			ui.button('iidx_2', style(1));
-			ui.button('iidx_3', style(2));
-			ui.button('iidx_4', style(3));
-			ui.button('iidx_5', style(4));
-			ui.button('iidx_6', style(5));
-			ui.button('iidx_7', style(6));
-			ui.turntable('220px', map.left);
+			ui.button('iidx_' + String(startPosition), style(0));
+			ui.button('iidx_' + String(startPosition + 1), style(1));
+			ui.button('iidx_' + String(startPosition + 2), style(2));
+			ui.button('iidx_' + String(startPosition + 3), style(3));
+			ui.button('iidx_' + String(startPosition + 4), style(4));
+			ui.button('iidx_' + String(startPosition + 5), style(5));
+			ui.button('iidx_' + String(startPosition + 6), style(6));
 		};
 
 	}
 
-	i2DX.layout('iidx_left', iidxlayout('left'));
-	i2DX.layout('iidx_right', iidxlayout('right'));
+	i2DX.layout('p1', iidxlayout('left'));
+	i2DX.layout('p2', iidxlayout('right'));
 
-	i2DX.layout('turntable', function(ui) {
+	i2DX.layout('p1_turntable', function(ui) {
 		ui.turntableFullscreen();
+	});
+
+	i2DX.layout('p2_turntable', function(ui) {
+		ui.turntableFullscreen(2);
 	});
 
 })();

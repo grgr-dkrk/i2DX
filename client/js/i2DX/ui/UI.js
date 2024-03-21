@@ -77,7 +77,7 @@ i2DX.ui.UI.prototype = {
 	 */
 	turntableFullscreen: function(player) {
 		player = player || this._defaultPlayer;
-		var component = new i2DX.ui.Component('turntable', { top: 0, right: 0, bottom: 0, left: 0 }, player);
+		var component = new i2DX.ui.Component('p' + player + '_turntable', { top: 0, right: 0, bottom: 0, left: 0 }, player);
 		this.add(component, new i2DX.events.TurntableHandler(component, 'fullscreen'));
 	},
 
