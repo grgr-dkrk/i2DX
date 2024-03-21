@@ -13,7 +13,14 @@ body
 .iidx_4,
 .iidx_5,
 .iidx_6,
-.iidx_7
+.iidx_7,
+.iidx_8,
+.iidx_9,
+.iidx_10,
+.iidx_11,
+.iidx_12,
+.iidx_13,
+.iidx_14
 {
 	background: #1a1a1a url(skin/keys.png);
 }
@@ -24,9 +31,16 @@ body
 .iidx_4,
 .iidx_5,
 .iidx_6,
-.iidx_7 {
+.iidx_7,
+.iidx_8,
+.iidx_9,
+.iidx_10,
+.iidx_11,
+.iidx_12,
+.iidx_13,
+.iidx_14 {
 	border: 5px solid #1A1A1A;
-	-webkit-box-sizing: content-box;
+	box-sizing: border-box;
 	border-radius: 4px;
 }
 
@@ -34,39 +48,63 @@ body
 .iidx_1,
 .iidx_3,
 .iidx_5,
-.iidx_7 { background-position: -256px 0px; }
+.iidx_7,
+.iidx_8,
+.iidx_10,
+.iidx_12,
+.iidx_14
+ { background-position: -256px 0px; }
 
 /* image position for white keys (pressed) */
 .iidx_1.state-pressed,
 .iidx_3.state-pressed,
 .iidx_5.state-pressed,
-.iidx_7.state-pressed { background-position: -128px 0px; }
+.iidx_7.state-pressed,
+.iidx_8.state-pressed,
+.iidx_10.state-pressed,
+.iidx_12.state-pressed,
+.iidx_14.state-pressed
+ { background-position: -128px 0px; }
 
 /* image position for black keys */
 .iidx_2,
 .iidx_4,
-.iidx_6 { background-position: -256px -256px; }
+.iidx_6,
+.iidx_9,
+.iidx_11,
+.iidx_13
+ { background-position: -256px -256px; }
 
 /* image position for black keys (pressed) */
 .iidx_2.state-pressed,
 .iidx_4.state-pressed,
-.iidx_6.state-pressed { background-position: -128px -256px; }
+.iidx_6.state-pressed,
+.iidx_9.state-pressed,
+.iidx_11.state-pressed,
+.iidx_13.state-pressed
+ { background-position: -128px -256px; }
 
 /* image position for turntable */
-.turntable
+.p1_turntable,
+.p2_turntable
 {
 	background: url(skin/scratch-sprite.png);
 	background-position: 0px 50%;
 }
 
-.turntable.placement-left.state-cw,
-.turntable.placement-right.state-ccw { background-position: -256px 50%; }
+.p1_turntable.placement-left.state-cw,
+.p1_turntable.placement-right.state-ccw,
+.p2_turntable.placement-left.state-cw,
+.p2_turntable.placement-right.state-ccw { background-position: -256px 50%; }
 
-.turntable.placement-left.state-ccw,
-.turntable.placement-right.state-cw { background-position: -512px 50%; }
+.p1_turntable.placement-left.state-ccw,
+.p1_turntable.placement-right.state-cw,
+.p2_turntable.placement-left.state-ccw,
+.p2_turntable.placement-right.state-cw { background-position: -512px 50%; }
 
 /* style for spinning part of turntable */
-.turntable .turntable-inner
+.p1_turntable .turntable-inner,
+.p2_turntable .turntable-inner
 {
 	position: absolute;
 	width: 400px; height: 400px;
@@ -76,13 +114,15 @@ body
 }
 
 /* style for fullscreen turntable */
-.turntable.placement-fullscreen
+.p1_turntable.placement-fullscreen,
+.p2_turntable.placement-fullscreen
 {
 	background: transparent;
 }
 
 /* style for spinning part of fullscreen turntable */
-.turntable.placement-fullscreen .turntable-inner
+.p1_turntable.placement-fullscreen .turntable-inner
+.p2_turntable.placement-fullscreen .turntable-inner
 {
 	position: absolute;
 	width: 1024px; height: 1024px;

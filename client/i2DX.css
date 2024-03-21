@@ -4,6 +4,8 @@ body {
 	font: 15px Verdana;
 	color: #e9e8e7;
 	margin: 0; padding: 0;
+	overflow: hidden;
+	touch-action: pan-y;
 }
 h1 {
 	font: bold 40px Helvetica;
@@ -18,7 +20,7 @@ html, body {
 
 .component {
 	position: absolute;
-	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .status {
@@ -44,7 +46,7 @@ h1 {
 }
 .turntable .turntable-inner {
 	-webkit-transition: 0.8s opacity;
-	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 .turntable.extended-no .turntable-inner {
 	opacity: 0;
