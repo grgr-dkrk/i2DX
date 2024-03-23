@@ -20,7 +20,7 @@ i2DX.ui.UI.prototype = {
 	 * @param {i2DX.events.TouchHandler} the touch handler
 	 */
 	add: function(component, handler) {
-		component.renderTo(document.body);
+		component.renderTo(document.getElementById('container'));
 		if (handler) {
 			this._handlers.push(handler);
 		}
