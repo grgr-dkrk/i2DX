@@ -7,10 +7,10 @@
 
 		function style(index) {
 			var style = {
-				bottom: (108 + (46 + 10) * (index % 2)) + 'mm',
+				bottom: (46 + 10) * (index % 2) + 'mm',
 				width: '29mm',
 				height: '46mm',
-				left: 20 + ((12 + 8) * index) + 'mm'
+				left: (12 + 8) * index + 'mm'
 			};
 
 			return style;

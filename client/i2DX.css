@@ -6,6 +6,7 @@ body {
 	margin: 0; padding: 0;
 	overflow: hidden;
 	touch-action: pan-y;
+	position: relative;
 }
 h1 {
 	font: bold 40px Helvetica;
@@ -16,6 +17,15 @@ h1 {
 
 html, body {
 	height: 100%;
+}
+
+#container {
+	width: 150mm;
+	height: 102mm;
+	position: relative;
+  margin: auto;
+	top: 50%;
+  transform: translateY(-50%);
 }
 
 .component {
