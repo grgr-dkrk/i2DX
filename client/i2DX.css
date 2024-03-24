@@ -34,6 +34,8 @@ html, body {
 
 #container.button .component {
 	position: absolute;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .status {
@@ -41,6 +43,8 @@ html, body {
 	z-index: 1;
 	pointer-events: none;
 	bottom: 0;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body.layout-iidx_left .status {
