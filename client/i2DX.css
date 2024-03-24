@@ -36,6 +36,8 @@ html, body {
 .status {
 	position: absolute;
 	z-index: 1;
+	pointer-events: none;
+	bottom: 0;
 }
 
 body.layout-iidx_left .status {
