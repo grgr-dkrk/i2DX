@@ -75,8 +75,8 @@ i2DX.ui.Component.prototype = {
 	getBounds: function() {
 		var b = {};
 		var p = {};
-		p.left = this._element.offsetParent.offsetLeft;
-		p.top = this._element.offsetParent.offsetTop;
+		p.left = this._element.offsetParent?.offsetLeft ?? 0;
+		p.top = this._element.offsetParent?.offsetTop ?? 0;
 		b.width = this._element.offsetWidth;
 		b.height = this._element.offsetHeight;
 		b.left = this._element.offsetLeft + p.left;
