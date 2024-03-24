@@ -97,6 +97,10 @@ i2DX.ui.UI.prototype = {
 		return this._defaultPlayer;
 	},
 
+	setType: function(type = 'unknown') {
+		document.getElementById('container')?.classList.add(type)
+	},
+
 	_addTouchHandler: function() {
 		document.addEventListener('touchstart', i2DX.proxy(this, '_updateTouches'), false);
 		document.addEventListener('touchmove', i2DX.proxy(this, '_updateTouches'), false);

@@ -21,6 +21,7 @@
 		}
 
 		return function(ui) {
+			ui.setType('button');
 			ui.button('iidx_' + String(startPosition), style(0));
 			ui.button('iidx_' + String(startPosition + 1), style(1));
 			ui.button('iidx_' + String(startPosition + 2), style(2));
@@ -36,10 +37,12 @@
 	i2DX.layout('p2', iidxlayout('right'));
 
 	i2DX.layout('p1_turntable', function(ui) {
+		ui.setType('turntable');
 		ui.turntableFullscreen();
 	});
 
 	i2DX.layout('p2_turntable', function(ui) {
+		ui.setType('turntable');
 		ui.turntableFullscreen(2);
 	});
 
