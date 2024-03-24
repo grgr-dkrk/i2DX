@@ -2,16 +2,18 @@
 (function() {
 
 	function iidxlayout(axis) {
-		const KEY_WIDTH = 29;
-		const KEY_HEIGHT = 46;
-		const MARGIN_KEY_INNER = 12;
-		const MARGIN_KEY_OUTER = 20.5;
+		const SCALE = 1.4;
+		const KEY_WIDTH = 29 * SCALE;
+		const KEY_HEIGHT = 46 * SCALE;
+		const MARGIN_KEY_INNER = 12 * SCALE;
+		const MARGIN_KEY_OUTER = 20.5 * SCALE;
+		const MARGIN_KEY_TOP_BOTTOM = 10 * SCALE;
 
 		var startPosition = axis == 'left' ? 1 : 8;
 
 		function style(index) {
 			var style = {
-				bottom: (KEY_HEIGHT + 10) * (index % 2) + 'mm',
+				bottom: (KEY_HEIGHT + MARGIN_KEY_TOP_BOTTOM) * (index % 2) + 'mm',
 				width: `${KEY_WIDTH}mm`,
 				height: `${KEY_HEIGHT}mm`,
 				left: index % 2 === 0 ? `${(KEY_WIDTH + MARGIN_KEY_INNER) * index / 2}mm` : `${(MARGIN_KEY_OUTER * index)}mm`,
