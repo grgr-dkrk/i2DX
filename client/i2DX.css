@@ -24,8 +24,8 @@ html, body {
 }
 
 #container.button {
-	width: 152mm;
-	height: 102mm;
+	width: 212.8mm; /* 152mm * 1.4 */
+	height: 142.8mm; /* 102mm * 1.4 */
 	position: relative;
   margin: auto;
 	top: 50%;
