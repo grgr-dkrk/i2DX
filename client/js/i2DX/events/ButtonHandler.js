@@ -20,8 +20,9 @@ i2DX.events.ButtonHandler.prototype = {
 	},
 	_checkBounds: function(touch) {
 		var bounds = this._component.getBounds();
-		if (bounds.left <= touch.x && touch.x <= bounds.right) {
-			if (bounds.top <= touch.y && touch.y <= bounds.bottom) {
+		var threshould = 20;
+		if (bounds.left - threshould <= touch.x && touch.x <= bounds.right + threshould) {
+			if (bounds.top - threshould <= touch.y && touch.y <= bounds.bottom + threshould) {
 				return true;
 			}
 		}
