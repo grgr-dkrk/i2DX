@@ -80,7 +80,7 @@ i2DX.ui.Component.prototype = {
 		b.width = this._element.offsetWidth;
 		b.height = this._element.offsetHeight;
 		b.left = this._element.offsetLeft + p.left;
-		b.top = this._element.offsetTop + p.top - b.height;
+		b.top = this._element.offsetTop + p.top - b.height - 25;
 		b.right = b.left + b.width;
 		b.bottom = b.top + b.height;
 		return b;
