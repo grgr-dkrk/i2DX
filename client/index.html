@@ -240,25 +240,6 @@ window.onload = function() {
 		return list;
 	}());
 
-	options.skin = new Option('Skin', function() {
-		var list = [];
-		for (var i in i2DX._skins) {
-			var c = i2DX._skins[i];
-			list.push([i, c.name + ' <small>by <strong>' + c.author + '</strong></small>']);
-		}
-		console.log(list);
-		return list;
-	}());
-
-	options.skin.setBlock();
-
-	options.layout.onchange = function(c) {
-		for (var i in i2DX._skins) {
-			options.skin.getOptionByValue(i).setEnabled(skinCompatibility[i](c.getValue()));
-		}
-		options.skin.ensureSelection();
-	};
-
 	options.layout.onchange(options.layout.getSelected());
 
 	options.hard = new Option('Hard Mode', [
